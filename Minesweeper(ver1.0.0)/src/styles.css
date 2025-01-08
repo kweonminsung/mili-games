@@ -1,0 +1,120 @@
+#container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#table {
+  border-spacing: 2px;
+  margin-top: 30px;
+}
+#footer {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+.cell {
+  border-radius: 2px;
+  background: #e0e0e0;
+  width: 25px;
+  height: 25px;
+  table-layout: fixed;
+  box-shadow: 2px 2px 4px #9f9f9f, -2px 2px 4px #e0e0e0;
+  border-spacing: 5px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cell:not(.opened):hover {
+  transform: scale(1.2);
+  transition: 0.1s ease;
+}
+.cell.pinned {
+  background: center / contain no-repeat url('./image/pin.png'), #e0e0e0;
+}
+.cell.opened {
+  background: white;
+}
+.cell.isMine.revealed {
+  background: center / contain no-repeat url('./image/mine.png'), #e0e0e0;
+}
+.cell.isMine.opened {
+  background: center / contain no-repeat url('./image/mine-red.png'), red;
+}
+.cell1 {
+  color: blue;
+}
+.cell2 {
+  color: green;
+}
+.cell3 {
+  color: red;
+}
+.cell4 {
+  color: purple;
+}
+.cell5 {
+  color: brown;
+}
+.cell6 {
+  color: turquoise;
+}
+.cell7 {
+  color: black;
+}
+.cell8 {
+  color: gray;
+}
+.select-diff-text {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+}
+#title {
+  animation: blinkTitle 1s linear infinite;
+  margin: 10px;
+}
+.diff-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.diff-btn {
+  width: 60px;
+  height: 30px;
+}
+.diff-btn-etc {
+  width: 192px;
+}
+.diff-btn:hover {
+  transform: scale(1.3);
+  transition: 0.1s ease;
+}
+.user-input-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 80px 40px;
+  gap: 10px 5px;
+}
+.user-input-start {
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+}
+.user-input-start:hover {
+  transform: scale(1.3);
+  transition: 0.1s ease;
+}
+@keyframes blinkTitle {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}

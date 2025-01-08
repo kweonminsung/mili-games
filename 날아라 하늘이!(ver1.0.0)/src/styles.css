@@ -1,0 +1,7 @@
+@font-face {
+  font-family: DungGeunMo;
+  src: url(./font/DungGeunMo.woff2) format('woff');
+}
+canvas {
+  border: 1px solid black;
+}

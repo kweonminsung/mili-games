@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./src/common.css" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <div class="modal-page">
+          <h1 id="title">MineSweeper</h1>
+          <p class="select-diff-text">난이도를 선택하세요</p>
+          <div class="diff-btn-container">
+            <div>
+              <button class="diff-btn" onClick="difficultyHandler(0);">
+                초급
+              </button>
+              <button class="diff-btn" onClick="difficultyHandler(1);">
+                중급
+              </button>
+              <button class="diff-btn" onClick="difficultyHandler(2);">
+                고급
+              </button>
+            </div>
+            <button class="diff-btn diff-btn-etc" onClick="setModalPage(2);">
+              사용자 지정
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-page">
+          <div>
+            <p class="select-diff-text">
+              보드의 크기와 지뢰의 개수를 입력하세요
+            </p>
+
+            <div class="user-input-container">
+              <span>가로 길이</span>
+              <input
+                id="column-input"
+                type="number"
+                min="4"
+                max="20"
+                value="10"
+              />
+              <span>세로 길이</span>
+              <input id="row-input" type="number" min="4" max="20" value="10" />
+              <span>지뢰 개수</span>
+              <input id="mine-input" type="number" min="1" value="16" />
+            </div>
+            <center>
+              <button class="user-input-start" onClick="userInputStart();">
+                시작
+              </button>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <p id="timer">
+        <span>걸린 시간 : </span>
+        <span id="timer-text">--:--:--</span>
+      </p>
+      <p id="score">
+        <span>깃발 개수 : </span>
+        <span id="pin-count">--</span>
+        |
+        <span>남은 폭탄 : </span>
+        <span id="mine-left">--</span>
+      </p>
+      <table id="table"></table>
+    </div>
+    <p id="footer">Powered By (검열됨)대대</p>
+    <script src="./src/common.js"></script>
+    <script src="./src/script.js"></script>
+  </body>
+</html>

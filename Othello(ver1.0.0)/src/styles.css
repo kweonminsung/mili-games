@@ -1,0 +1,50 @@
+#container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#table {
+  border-spacing: 5px;
+  margin-top: 30px;
+}
+#turn_text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px;
+}
+#score {
+  text-align: center;
+  font-weight: bold;
+  margin: 5px;
+}
+#footer {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+.cell {
+  border-radius: 5px;
+  background: #e0e0e0;
+  width: 40px;
+  height: 40px;
+  table-layout: fixed;
+  box-shadow: 2px 2px 4px #9f9f9f, -2px 2px 4px #e0e0e0;
+  border-spacing: 5px;
+}
+.selected.blue {
+  background: blue;
+}
+.selected.red {
+  background: red;
+}
+.canSelect {
+  background: #fff6a2;
+  cursor: pointer;
+}
+.canSelect:hover {
+  transform: scale(1.5);
+  transition: 0.1s ease;
+}
