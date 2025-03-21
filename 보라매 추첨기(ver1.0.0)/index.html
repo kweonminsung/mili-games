@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>보라매 추첨기</title>
+    <link rel="stylesheet" type="text/css" href="./src/common.css" />
+    <link rel="stylesheet" type="text/css" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="modal-wrapper">
+      <div class="modal-content">
+        <h1 id="title">보라매 추첨기</h1>
+        <div id="common-setting-container">
+          <div>
+            <input
+              id="allow-dupl-ipt"
+              type="checkbox"
+              style="cursor: pointer"
+              onchange="allowDuplicatesBtnHandler()"
+            />
+            <label for="allow-dupl-ipt" style="cursor: pointer"
+              >중복을 허용하여 추첨</label
+            >
+            <input
+              id="use-ani-ipt"
+              type="checkbox"
+              style="cursor: pointer"
+              onchange="useAnimationBtnHandler()"
+            />
+            <label for="use-ani-ipt" style="cursor: pointer"
+              >애니메이션 사용하기</label
+            >
+          </div>
+          <button class="big-btn" onclick="loadPrevLot()">
+            마지막으로 사용한 추첨 불러오기
+          </button>
+        </div>
+        <div id="lot-type-setting-container">
+          <button onclick="setLotType(0)">숫자를 직접 입력</button>
+          <button onclick="setLotType(1)">이름을 직접 입력</button>
+          <button onclick="setLotType(2)">여러 이름 입력</button>
+        </div>
+
+        <div id="lot-spec-setting-wrapper">
+          <div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 100px 60px;
+                gap: 10px 5px;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <label for="lot-spec-num-start">첫 숫자</label>
+              <input id="lot-spec-num-start" min="1" style="padding: 3px" />
+              <label for="lot-spec-num-end">마지막 숫자</label>
+              <input id="lot-spec-num-end" type="number" style="padding: 3px" />
+            </div>
+          </div>
+          <div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+              "
+            >
+              <button id="lot-spec-name-add-btn" onclick="addLotName()">
+                사람 추가
+              </button>
+              <div id="lot-spec-name-list"></div>
+              <label
+                for="lot-spec-file-ipt"
+                style="border-bottom: 1px solid black; padding: 3px"
+                >또는 파일로 입력하기</label
+              >
+              <input id="lot-spec-file-ipt" type="file" />
+            </div>
+          </div>
+          <div>
+            <div
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <textarea
+                id="lot-spec-every-name-textarea"
+                placeholder="콤마로 구분하여 입력"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="big-btn"
+          style="font-size: 18px"
+          onclick="startLotBtnHandler()"
+        >
+          시작
+        </button>
+      </div>
+
+      <div id="madeBy-div">
+        <p>기획 및 개발</p>
+        <p>(검열됨)대대</p>
+      </div>
+    </div>
+    <div id="main-container">
+      <div id="lot-display-container">
+        <div id="lot-display-aircraft-img"></div>
+        <div id="lot-display-missile-img"></div>
+        <div id="lot-display-explosion-img"></div>
+      </div>
+      <div style="display: flex; gap: 20px">
+        <div>
+          <div>
+            <button id="picker-btn" onclick="pickerBtnHandler()">뽑기</button>
+          </div>
+          <div>
+            <button id="reset-btn" onclick="resetBtnHandler()">리셋</button>
+            <button id="menu-btn" onclick="location.reload()">메뉴</button>
+          </div>
+        </div>
+        <div id="lot-history-container">
+          <p>-- 추첨 기록 --</p>
+          <div id="lot-history-list"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/common.js"></script>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
